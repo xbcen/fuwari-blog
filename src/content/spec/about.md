@@ -7,6 +7,6 @@
 ## 一些网站
 > [主力博客](https://blog.sstars.dpdns.org)
 
-> 牢叉的粉丝交流群：
+> 牢叉的粉丝交流群：**1017240903**
 
 博客架构：[Fuwari](https://github.com/saicaca/fuwari)

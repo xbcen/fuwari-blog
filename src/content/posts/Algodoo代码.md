@@ -3,9 +3,9 @@ title: Algodoo代码
 published: 2025-08-11
 description: 'Algodoo代码合集，收集中……'
 image: ''
-tags: ["Algodoo代码","合集"]
+tags: ["Algodoo","代码"]
 category: 'Algodoo'
-draft: false 
+draft: true 
 lang: ''
 ---
 
