@@ -32,9 +32,14 @@ export const siteConfig: SiteConfig = {
 	favicon: [
 		// Leave this array empty to use the default favicon
 		{
-		  src: '/src/icon.png',    // Path of the favicon, relative to the /public directory
+		  src: '/src/assets/favicon/de.png',    // Path of the favicon, relative to the /public directory
+		  theme: 'dark',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
+		},
+		
+		// Leave this array empty to use the default favicon
+		{
+		  src: '/src/assets/favicon/pl.png',    // Path of the favicon, relative to the /public directory
 		  theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
-		  sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
 		}
 	],
 };
@@ -44,6 +49,7 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Home,
 		LinkPreset.Archive,
 		LinkPreset.About,
+		LinkPreset.Algodoo,
 		{
 			name: "GitHub",
 			url: "https://github.com/saicaca/fuwari", // Internal links should not include the base path, as it is automatically added
@@ -53,7 +59,7 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/demo-avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+	avatar: "assets/images/avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "一只X",
 	bio: "落霞与孤鹜齐飞，秋水共长天一色。",
 	links: [

@@ -1,9 +1,12 @@
 # About
-This is the demo site for [Fuwari](https://github.com/saicaca/fuwari).
+一只X的博客，写点Algodoo教程，以及记录球圈有的没的。
 
-::github{repo="saicaca/fuwari"}
+- 球圈一
+- 然后不知道写点什么了，阿巴阿巴。
 
-> ### Sources of images used in this site
-> - [Unsplash](https://unsplash.com/)
-> - [星と少女](https://www.pixiv.net/artworks/108916539) by [Stella](https://www.pixiv.net/users/93273965)
-> - [Rabbit - v1.4 Showcase](https://civitai.com/posts/586908) by [Rabbit_YourMajesty](https://civitai.com/user/Rabbit_YourMajesty)
+## 一些网站
+> [主力博客](https://blog.sstars.dpdns.org)
+
+> 牢叉的粉丝交流群：
+
+博客架构：[Fuwari](https://github.com/saicaca/fuwari)
