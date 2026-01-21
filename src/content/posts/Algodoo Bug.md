@@ -17,6 +17,8 @@ lang: ''
 
 ## 1.UI没了。
 
+![1.1](https://raw.githubusercontent.com/xbcen/pic/main/picture/1.1.png "UI没了")
+
 解决方法：按tab键。
 
 若第一步无作用，请执行以下操作：
@@ -25,7 +27,7 @@ lang: ''
 
 2.切换英文输入法。
 
-3.盲打以下代码：gui.skin.opacity = 0.925
+3.盲打以下代码：`gui.skin.opacity = 0.925`
 
 4.回车。
 
@@ -33,17 +35,25 @@ lang: ''
 
 ## 2.排名重复。
 
+![1.2](https://raw.githubusercontent.com/xbcen/pic/main/picture/1.2.png "重复的排行榜")
+
 1.选中文本框。
+
+![1.2.1](https://raw.githubusercontent.com/xbcen/pic/main/picture/1.2.1.png "被选中的文本框")
 
 2.右键-碰撞作用层-勾上J。
 
 ## 3.烟花喷射战士。
+
+![1.3](https://raw.githubusercontent.com/xbcen/pic/main/picture/1.3.png "冠军的烟花")
 
 1.选中球。
 
 2.右键-碰撞作用层-取消可与液体作用。
 
 ## 4.烟花错位，不显示。
+
+![1.1](https://raw.githubusercontent.com/xbcen/pic/main/picture/1.1.png "UI没了")
 
 1.选中球，右键，选取，选取，选取圆形物件。
 
@@ -59,7 +69,9 @@ lang: ''
 
 方法1：ctrl+z。
 
-方法2：在上面输入框输入：xxx=xxx
+方法2：在上面输入框输入：`xxx=xxx`
+
+![输入框](https://raw.githubusercontent.com/xbcen/pic/main/picture/输入框.png "Algodoo输入框")
 
 如：ondie=(e)=>{}
 
@@ -98,23 +110,26 @@ timetolive = 0
 
 1.ctrl+z。
 
-2.选中所有球，右键，脚本选单，在上面的输入框输入：_B=10
+2.选中所有球，右键，脚本选单，在上面的输入框输入：`_B=10`
 
 ## 3.球全叠50名。
+
+![2.3](https://raw.githubusercontent.com/xbcen/pic/main/picture/2.3.png "叠球的排行榜")
 
 1.ctrl+z/调整排行榜。
 
 2.选中所有球，右键，选取，选取，选取圆形物件。
 
-3.脚本选单，在ondie中输入：(e)=>{scene.my.num = scene.my.num - 1}
+3.脚本选单，在ondie中输入：`(e)=>{scene.my.num = scene.my.num - 1}`
 
 ## 4.球排名中间空一位。
+![2.4](https://raw.githubusercontent.com/xbcen/pic/main/picture/2.4.png "排名之间空一位的排行榜")
 
 1.ctrl+z/调整排行榜。
 
 2.选中所有球，右键，选取，选取，选取追踪绘图器。
 
-3.脚本选单，在ondie中输入：(e)=>{}
+3.脚本选单，在ondie中输入：`(e)=>{}`
 
 ## 5.圆周运动。
 
@@ -124,11 +139,11 @@ timetolive = 0
 
 ## 6.叠球排行榜不显示名字
 
-选中所有球，右键，脚本选单，在上面的输入框输入：_name = materialname
+选中所有球，右键，脚本选单，在上面的输入框输入：`_name = materialname`
 
 ## 7.记忆体溢位（请做好心理准备）。
 
-成因：回收站里东西太多了。
+成因：回收站里东西太多了？
 
 1.复制自己没保存的东西，粘贴到记事本里。
 

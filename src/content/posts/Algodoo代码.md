@@ -61,7 +61,7 @@ x～y随机取值（y>x）：`rand.uniform01*(y-x)+x`
 
 按回车键自动运行（写update）（小键盘回车请将"return"改为"enter"，其他键位请自己查询）：
 
-```thyme
+```
 (e)=>{
 Keys.isDown("return")?{
 Sim.running = true
@@ -71,7 +71,7 @@ Sim.running = true
 
 隐藏左上角UI（写update）：
 
-```thyme
+```
 (e)=>{
 sim.running ? {
 Scene.addWidget({
@@ -89,7 +89,7 @@ visible := true
 
 物体顺逆轮流转（1）（写轴承poststep）：
 
-```thyme
+```
 (e)=>{
 sim.tick % 数值 == 0 ? {
 ccw = ! ccw
@@ -99,7 +99,7 @@ ccw = ! ccw
 
 物体顺逆轮流转（2）（写轴承poststep）：
 
-```thyme
+```
 (e)=>{
 motorspeed = math.sin(sim.time) * math.pi
 }
@@ -109,14 +109,14 @@ motorspeed = math.sin(sim.time) * math.pi
 
 物体顺逆轮流转（3）（写物体poststep）
 
-```thyme
+```
 (e)=>{
 angle=math.sin(sim.time)
 }
 ```
 
 染色（写物体oncollide）：
-```thyme
+```
 (e)=>{
 color = e.other.color;
 update = e.other.update
@@ -125,7 +125,7 @@ update = e.other.update
 
 被雷射笔照到过关（写雷射笔onlaserHit）：
 
-```thyme
+```
 (e)=>{
 e.geom._M ? {
 e.other.pos = scene.my.s关卡号m;
@@ -136,7 +136,7 @@ scene.my.spots = scene.my.spots关卡号 - 1
 ```
 排行榜文字背景（增加可读性）(写oncollide，使用时请去掉注释):
 
-```thyme
+```
 (e)=>{
 e.other._pp ? {
 e.other.update = (e)=>{};
@@ -148,7 +148,7 @@ e.other.textcolor = [1,1,1,1]
 
 随机概率过关（需要先定义_rand变量）（写物体oncollide）：
 
-```thyme
+```
 (e)=>{
 e.other._M ? {
 _rand = rand.uniform01;
@@ -168,7 +168,7 @@ scene.removeentity(e.this)
 
 回家静止（写物体oncollide）：
 
-```thyme
+```
 (e)=>{
 e.other.timetolive=6;
 e.other.density=+inf;
@@ -185,7 +185,7 @@ poststep=(e)=>{}
 回家区免疫下层（写oncollide）：
 
 
-```thyme
+```
 (e)=>{
 e.pos(1) >= e.this.pos(1) ? {
 e.other.pos = scene.my.s关卡号
@@ -194,7 +194,7 @@ e.other.pos = scene.my.s关卡号
 ```
 
 反重力（写oncollide）：
-```thyme
+```
 (e)=>{
 e.other._M ? {
 e.other.postStep = (e)=>{
