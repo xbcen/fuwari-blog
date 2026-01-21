@@ -5,7 +5,7 @@ import type {
 	ProfileConfig,
 	SiteConfig,
 } from "./types/config";
-import { LinkPreset } from "./types/config";
+import { LinkPreset, CategoryLink } from "./types/config";
 
 export const siteConfig: SiteConfig = {
 	title: "一只X的博客",
@@ -49,11 +49,11 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Home,
 		LinkPreset.Archive,
 		LinkPreset.About,
-		LinkPreset.Algodoo,
+		CategoryLink("Algodoo"),
 		{
 			name: "GitHub",
 			url: "https://github.com/saicaca/fuwari", // Internal links should not include the base path, as it is automatically added
-			external: false, // Show an external link icon and will open in a new tab
+			external: true, // Show an external link icon and will open in a new tab
 		},
 	],
 };

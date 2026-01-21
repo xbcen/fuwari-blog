@@ -48,7 +48,6 @@ export enum LinkPreset {
 	Home = 0,
 	Archive = 1,
 	About = 2,
-	Algodoo = 3,
 }
 
 export type NavBarLink = {
@@ -101,3 +100,10 @@ export type BlogPostData = {
 export type ExpressiveCodeConfig = {
 	theme: string;
 };
+
+export function CategoryLink(category: string): NavBarLink {
+	return {
+		name: category,
+		url: `/archive/?category=${encodeURIComponent(category)}`,
+	};
+}
