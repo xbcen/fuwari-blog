@@ -111,6 +111,15 @@ const jsonLd = {
         </div>
     </div>
 
+    <!-- twikoo 评论区 -->
+    <div id="pl"></div>
+    <script src="https://s4.zstatic.net/ajax/libs/twikoo/1.6.38/twikoo.min.js" onload="
+        window.twikoo.init({
+            envId: 'https://pl.xbcen.dpdns.org/',
+            el: '#pl',
+        });"></script>
+    </script>
+
     <div class="flex flex-col md:flex-row justify-between mb-4 gap-4 overflow-hidden w-full">
         <a href={entry.data.nextSlug ? getPostUrlBySlug(entry.data.nextSlug) : "#"}
            class:list={["w-full font-bold overflow-hidden active:scale-95", {"pointer-events-none": !entry.data.nextSlug}]}>
