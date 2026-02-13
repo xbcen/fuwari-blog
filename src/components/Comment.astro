@@ -1,9 +1,6 @@
 
 <style is:global>
 /* Twikoo评论框高度 */
-.el-textarea {
-    min-height: 150px !important;
-  }
 
 /* 下面表情和按钮那一栏的设置 */
 #twikoo .tk-comments .tk-submit .tk-row.actions{
@@ -60,20 +57,24 @@
 
 /* 浅色模式颜色 */
 :root:not(.dark) {
-  --liushen-border-color: oklch(0.95 0.025 var(--hue));
-  --liushen-card-bg: #fff;
-  --liushen-card-border: oklch(0.95 0.025 var(--hue));
+  --liushen-border-color:var(--btn-regular-bg) ;
+  --card-bg: #fff;
+  --liushen-card-border: var(--btn-regular-bg);
   --style-border-always: 1px solid var(--liushen-card-border);
-  --liushen-blue: oklch(0.70 0.14 var(--hue));
 }
 
 /* 深色模式颜色 */
 :root.dark {
-  --liushen-border-color: oklch(0.16 0.014 var(--hue));
-  --liushen-card-bg: #2c2c2c;
-  --liushen-card-border: oklch(0.16 0.014 var(--hue));
+  --liushen-border-color: var(--btn-regular-bg);
+  --card-bg: #2c2c2c;
+  --liushen-card-border: var(--btn-regular-bg);
   --style-border-always: 1px solid var(--liushen-card-border);
-  --liushen-blue: oklch(0.70 0.14 var(--hue));
+}
+
+:root.dark {
+  p, strong, input, textarea, small, .OwO-logo, .tk-comments-count, .el-input-group__prepend {
+    color: #fff;
+  }
 }
 
 /* 评论区评论大框 */
@@ -86,30 +87,26 @@
   /* 圆角 */
   border-radius: var(--liushen-radius);
   /* 背景颜色 */
-  background: var(--liushen-card-bg);
+  background: var(--card-bg);
   /* 变动动画时长 */
   transition: .3s;
 }
 
 /* 浅色模式评论区评论大框 */
-:root:not(.dark)
-.twikoo .tk-comments-container>.tk-comment,
+:root:not(.dark) 
 .twikoo .tk-comments .tk-submit {
   /* 阴影 */
   box-shadow: var(--card-box-shadow);
 }
 
 /* 浅色模式评论区评论大框阴影悬浮加深 */
-:root:not(.dark)
-.twikoo .tk-comments-container>.tk-comment:hover,
+:root:not(.dark) 
 .twikoo .tk-comments .tk-submit:hover {
   /* 阴影（浅色模式突出层次感） */
   box-shadow: var(--card-hover-box-shadow);
 }
 
 /* 黑暗模式评论区评论大框 */
-:root.dark
-.twikoo .tk-comments-container>.tk-comment,
 .twikoo .tk-comments .tk-submit {
   /* 边框样式 */
   border-style: solid;
@@ -124,7 +121,7 @@
   /* 圆角 */
   border-radius: var(--liushen-radius);
   /* 背景颜色 */
-  background: var(--liushen-card-bg);
+  background: var(--card-bg);
   /* 内边距 */
   padding: 0.4rem;
   /* 底边距 */
@@ -143,16 +140,6 @@
 :root:not(.dark) .twikoo .tk-extra:hover {
   /* 阴影 */
   box-shadow: var(--card-hover-box-shadow);
-}
-
-/* 黑暗模式设备信息 */
-:root.dark .twikoo .tk-extra {
-  /* 边框样式 */
-  border-style: solid;
-  /* 边框宽度 */
-  border-width: var(--liushen-card-border-width);
-  /* 边框颜色 */
-  border-color: var(--liushen-card-border);
 }
 
 /* 加载更多按钮 */
@@ -178,7 +165,7 @@
 /* 黑暗模式加载更多按钮（鼠标悬浮时） */
 :root.dark .twikoo .tk-expand:hover {
   /* 背景颜色 */
-  background-color: var(--liushen-blue);
+  background-color: var(--primary);
 }
 
 /* 黑暗模式加载更多按钮 */
@@ -189,6 +176,10 @@
   border-width: var(--liushen-card-border-width);
   /* 边框颜色 */
   border-color: var(--liushen-card-border);
+}
+
+.tk-action-icon, .tk-icon.__comments {
+    color: var(--primary) !important;
 }
 
 /* 分类卡片移动端个人信息卡片只显示两个 */
