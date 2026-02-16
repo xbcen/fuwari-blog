@@ -15,7 +15,7 @@ import {
 	LIGHT_MODE,
 	PAGE_WIDTH,
 } from "../constants/constants";
-import { defaultFavicons } from "../constants/icon";
+import { defaultFavicons } from "../constants/icon";1
 import type { Favicon } from "../types/config";
 import { pathsEqual, url } from "../utils/url-utils";
 import "katex/dist/katex.css";
@@ -136,11 +136,67 @@ const bannerOffset =
 			let offset = Math.floor(window.innerHeight * (BANNER_HEIGHT_EXTEND / 100));
 			offset = offset - offset % 4;
 			document.documentElement.style.setProperty('--banner-height-extend', `${offset}px`);
+
+			// Set background image based on theme
+			const bgConfig = window.__SITE_CONFIG__?.background;
+			if (bgConfig?.enable) {
+				const isDark = document.documentElement.classList.contains('dark');
+				const bgImage = isDark ? bgConfig.dark : bgConfig.light;
+				if (bgImage) {
+					document.documentElement.style.setProperty('--bg-image', bgImage);
+				}
+			}
+		</script>
+		<script is:inline>
+			// Load site config from data attributes
+			const configCarrier = document.getElementById('config-carrier');
+			if (configCarrier) {
+				const hue = configCarrier.getAttribute('data-hue');
+				const siteConfig = configCarrier.getAttribute('data-site-config');
+				
+				if (hue) {
+					window.__SITE_CONFIG__ = window.__SITE_CONFIG__ || {};
+					window.__SITE_CONFIG__.hue = hue;
+				}
+				
+				if (siteConfig) {
+					try {
+						window.__SITE_CONFIG__ = window.__SITE_CONFIG__ || {};
+						window.__SITE_CONFIG__.background = JSON.parse(siteConfig).background;
+					} catch (e) {
+						console.error('Failed to parse site config:', e);
+					}
+				}
+			}
 		</script>
 		<style define:vars={{
 			configHue,
 			'page-width': `${PAGE_WIDTH}rem`,
 		}}></style>  <!-- defines global css variables. This will be applied to <html> <body> and some other elements idk why -->
+
+		<style is:global>
+			/* Background image styles */
+			:root {
+				--bg-image: none;
+				--bg-image-size: cover;
+				--bg-image-position: center;
+				--bg-image-repeat: no-repeat;
+				--bg-image-attachment: fixed;
+			}
+
+			.dark {
+				--bg-image: none;
+			}
+
+			/* Apply background image when enabled */
+			.enable-bg-image {
+				background-image: var(--bg-image);
+				background-size: var(--bg-image-size);
+				background-position: var(--bg-image-position);
+				background-repeat: var(--bg-image-repeat);
+				background-attachment: var(--bg-image-attachment);
+			}
+		</style>
 
 
 		<slot name="head"></slot>
@@ -148,7 +204,7 @@ const bannerOffset =
 		<link rel="alternate" type="application/rss+xml" title={profileConfig.name} href={`${Astro.site}rss.xml`}/>
 
 	</head>
-	<body class=" min-h-screen transition " class:list={[{"lg:is-home": isHomePage, "enable-banner": enableBanner}]}
+	<body class=" min-h-screen transition " class:list={[{"lg:is-home": isHomePage, "enable-banner": enableBanner, "enable-bg-image": siteConfig.background.enable}]}
 		  data-overlayscrollbars-initialize
 	>
 		<ConfigCarrier></ConfigCarrier>
@@ -195,7 +251,7 @@ const bannerOffset =
 </style>
 
 <script>
-import 'overlayscrollbars/overlayscrollbars.css';
+	import 'overlayscrollbars/overlayscrollbars.css';
 import {
 	OverlayScrollbars,
 	// ScrollbarsHidingPlugin,
@@ -210,6 +266,7 @@ import {
 	BANNER_HEIGHT_EXTEND,
 	MAIN_PANEL_OVERLAPS_BANNER_HEIGHT
 } from "../constants/constants";
+
 import { siteConfig } from '../config';
 
 /* Preload fonts */
@@ -280,6 +337,20 @@ setClickOutsideToClose("search-panel", ["search-panel", "search-bar", "search-sw
 function loadTheme() {
 	const theme = getStoredTheme()
 	setTheme(theme)
+	
+	// Update background image when theme changes
+	updateBackgroundImage()
+}
+
+function updateBackgroundImage() {
+	const bgConfig = window.__SITE_CONFIG__?.background;
+	if (!bgConfig?.enable) return;
+
+	const isDark = document.documentElement.classList.contains('dark');
+	const bgImage = isDark ? bgConfig.dark : bgConfig.light;
+	if (bgImage) {
+		document.documentElement.style.setProperty('--bg-image', bgImage);
+	}
 }
 
 function loadHue() {
@@ -365,11 +436,25 @@ function showBanner() {
 
 function init() {
 	// disableAnimation()()		// TODO
-	loadTheme();
 	loadHue();
 	initCustomScrollbar();
 	showBanner();
+	loadTheme();
 }
+
+// Listen for theme changes to update background image
+const observer = new MutationObserver((mutations) => {
+	mutations.forEach((mutation) => {
+		if (mutation.attributeName === 'class') {
+			updateBackgroundImage();
+		}
+	});
+});
+
+observer.observe(document.documentElement, {
+	attributes: true,
+	attributeFilter: ['class']
+});
 
 /* Load settings when entering the site */
 init();

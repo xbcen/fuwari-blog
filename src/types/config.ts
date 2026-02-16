@@ -30,6 +30,11 @@ export type SiteConfig = {
 			url?: string;
 		};
 	};
+	background: {
+		enable: boolean;
+		light?: string;
+		dark?: string;
+	};
 	toc: {
 		enable: boolean;
 		depth: 1 | 2 | 3;
