@@ -25,11 +25,6 @@ export const siteConfig: SiteConfig = {
 			url: "", // (Optional) URL link to the original artwork or artist's page
 		},
 	},
-	background: {
-		enable: true, // Enable background image with light/dark mode support
-		light: "/assets/images/bg-light.jpg", // Light mode background image
-		dark: "/assets/images/bg-dark.jpg", // Dark mode background image
-	},
 	toc: {
 		enable: true, // Display the table of contents on the right side of the post
 		depth: 2, // Maximum heading depth to show in the table, from 1 to 3
