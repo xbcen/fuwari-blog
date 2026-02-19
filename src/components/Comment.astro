@@ -70,7 +70,7 @@
   --style-border-always: 1px solid var(--liushen-card-border);
 }
 
-#twikoo.dark {
+:root.dark #twikoo {
   p, span, strong, input, textarea, small, .OwO-logo, .tk-comments-count, .el-input-group__prepend {
     color: #fff;
   }
@@ -238,10 +238,20 @@
     const currentPostSlug = window.location.pathname.replace('/posts/', '');
     const currentPostUrl = getPostUrlBySlug(currentPostSlug);
 
+    function getPostUrlBySlug(slug) {
+        return `/posts/${slug}`;
+    }
+
     function fetchCommentsCount() {
+        if (typeof twikoo === 'undefined') {
+            console.warn('Twikoo not loaded yet, retrying...');
+            setTimeout(fetchCommentsCount, 1000);
+            return;
+        }
+        
         twikoo.getCommentsCount({
             envId: 'https://pl.xbcen.dpdns.org/',
-            urls: [currentPostUrl], 
+            urls: [currentPostUrl],
             includeReply: true
         }).then(function (res) {
             if (res && res.length > 0) {
@@ -252,14 +262,23 @@
                 }
             }
         }).catch(function (err) {
+            console.error('Failed to fetch comments count:', err);
             const placeholder = document.getElementById('twikoo-comment-count-placeholder');
             if (placeholder) {
-                placeholder.textContent = '-'; 
+                placeholder.textContent = '-';
             }
         });
     }
 
-    function getPostUrlBySlug(slug) {
-        return `/posts/${slug}`; 
+    // 等待 twikoo 初始化完成后再获取评论数
+    function waitForTwikooAndFetch() {
+        if (typeof twikoo === 'undefined') {
+            setTimeout(waitForTwikooAndFetch, 100);
+        } else {
+            fetchCommentsCount();
+        }
     }
+
+    // 页面加载完成后开始等待
+    window.addEventListener('load', waitForTwikooAndFetch);
 </script>
