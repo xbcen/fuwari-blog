@@ -15,7 +15,7 @@ import {
 	LIGHT_MODE,
 	PAGE_WIDTH,
 } from "../constants/constants";
-import { defaultFavicons } from "../constants/icon";
+import { defaultFavicons } from "../constants/icon";1
 import type { Favicon } from "../types/config";
 import { pathsEqual, url } from "../utils/url-utils";
 import "katex/dist/katex.css";
@@ -136,11 +136,12 @@ const bannerOffset =
 			let offset = Math.floor(window.innerHeight * (BANNER_HEIGHT_EXTEND / 100));
 			offset = offset - offset % 4;
 			document.documentElement.style.setProperty('--banner-height-extend', `${offset}px`);
-		</script>
-		<style define:vars={{
-			configHue,
-			'page-width': `${PAGE_WIDTH}rem`,
-		}}></style>  <!-- defines global css variables. This will be applied to <html> <body> and some other elements idk why -->
+
+			</script>
+			<style define:vars={{
+				configHue,
+				'page-width': `${PAGE_WIDTH}rem`,
+			}}></style>  <!-- defines global css variables. This will be applied to <html> <body> and some other elements idk why -->
 
 
 		<slot name="head"></slot>
@@ -195,7 +196,7 @@ const bannerOffset =
 </style>
 
 <script>
-import 'overlayscrollbars/overlayscrollbars.css';
+	import 'overlayscrollbars/overlayscrollbars.css';
 import {
 	OverlayScrollbars,
 	// ScrollbarsHidingPlugin,
@@ -210,6 +211,7 @@ import {
 	BANNER_HEIGHT_EXTEND,
 	MAIN_PANEL_OVERLAPS_BANNER_HEIGHT
 } from "../constants/constants";
+
 import { siteConfig } from '../config';
 
 /* Preload fonts */
@@ -365,10 +367,10 @@ function showBanner() {
 
 function init() {
 	// disableAnimation()()		// TODO
-	loadTheme();
 	loadHue();
 	initCustomScrollbar();
 	showBanner();
+	loadTheme();
 }
 
 /* Load settings when entering the site */
