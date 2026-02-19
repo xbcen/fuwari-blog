@@ -7,7 +7,7 @@
     margin-left: 0;
 }
 
-/* 个人信息和文本输入之间的空位置 */
+/* 个人信息和文本输入之间的空位 */
 .tk-main .tk-submit .tk-col .tk-meta-input,
 #twikoo .tk-comments .tk-submit .tk-col .tk-meta-input{
     margin-bottom: 16px;
@@ -83,7 +83,7 @@
 /* 评论区评论大框 */
 .twikoo .tk-comments-container>.tk-comment,
 .twikoo .tk-comments .tk-submit {
-  /* 内边距 */
+  /* 内边框 */
   padding: 20px;
   margin-top: 0px;
   margin-bottom: 20px;
@@ -125,9 +125,9 @@
   border-radius: var(--liushen-radius);
   /* 背景颜色 */
   background: var(--card-bg);
-  /* 内边距 */
+  /* 内边框 */
   padding: 0.4rem;
-  /* 底边距 */
+  /* 底边框 */
   margin-bottom: 1rem;
   /* 变动动画时长 */
   transition: .3s;
@@ -233,10 +233,14 @@
     loadTwikoo();``
 </script>
 
+<script is:inline>
+    window.TWIKOO_MAGIC_PATH = {path};
+</script>
+
 <!-- 评论数获取 -->
 <script is:inline>
-    const currentPostSlug = window.location.pathname.replace('/posts/', '');
-    const currentPostUrl = getPostUrlBySlug(currentPostSlug);
+    let currentPostSlug = window.location.pathname.replace('/posts/', '');
+    let currentPostUrl = getPostUrlBySlug(currentPostSlug);
 
     function getPostUrlBySlug(slug) {
         return `/posts/${slug}`;
@@ -249,17 +253,23 @@
             return;
         }
         
+        console.log('Fetching comments count for URL:', currentPostUrl);
+        
         twikoo.getCommentsCount({
             envId: 'https://pl.xbcen.dpdns.org/',
             urls: [currentPostUrl],
             includeReply: true
         }).then(function (res) {
+            console.log('Comments count response:', res);
             if (res && res.length > 0) {
                 const count = res[0].count;
                 const placeholder = document.getElementById('twikoo-comment-count-placeholder');
                 if (placeholder) {
                     placeholder.textContent = count;
+                    console.log('Comment count set to:', count);
                 }
+            } else {
+                console.warn('No comments found for URL:', currentPostUrl);
             }
         }).catch(function (err) {
             console.error('Failed to fetch comments count:', err);
@@ -279,6 +289,14 @@
         }
     }
 
-    // 页面加载完成后开始等待
+    // 页面加载完成后开始等待 twikoo 初始化
     window.addEventListener('load', waitForTwikooAndFetch);
+    
+    // 页面切换后重新获取评论数
+    document.addEventListener('astro:page-load', function() {
+        currentPostSlug = window.location.pathname.replace('/posts/', '');
+        currentPostUrl = getPostUrlBySlug(currentPostSlug);
+        waitForTwikooAndFetch();
+    });
 </script>
+
