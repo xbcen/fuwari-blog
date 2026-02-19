@@ -17,8 +17,8 @@ export const siteConfig: SiteConfig = {
 	},
 	banner: {
 		enable: false,
-		src: "/src/assets/images/banner-light.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
+		src: "/assets/images/banner-light.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+		position: "bottom", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
 		credit: {
 			enable: false, // Display the credit text of the banner image
 			text: "", // Credit text to be displayed
@@ -32,13 +32,13 @@ export const siteConfig: SiteConfig = {
 	favicon: [
 		// Leave this array empty to use the default favicon
 		{
-		  src: '/src/assets/favicon/de.png',    // Path of the favicon, relative to the /public directory
+		  src: '/assets/favicon/de.png',    // Path of the favicon, relative to the /public directory
 		  theme: 'dark',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
 		},
 		
 		// Leave this array empty to use the default favicon
 		{
-		  src: '/src/assets/favicon/pl.png',    // Path of the favicon, relative to the /public directory
+		  src: '/assets/favicon/pl.png',    // Path of the favicon, relative to the /public directory
 		  theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
 		}
 	],
@@ -59,14 +59,14 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "/src/assets/images/avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+	avatar: "/assets/images/avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "一只X",
 	bio: "落霞与孤鹜齐飞，秋水共长天一色。",
 	links: [
 	    {
-    	  	name: 'Bilibili',
+	      	name: 'Bilibili',
 	     	icon: 'fa6-brands:bilibili',
-    	  	url: 'https://space.bilibili.com/1528691863',
+	      	url: 'https://space.bilibili.com/1528691863',
 },
 		{
 			name: "GitHub",
