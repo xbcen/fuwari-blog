@@ -44,30 +44,30 @@
 
 /* 宽度太窄的时候去掉预览按钮 */
 @media screen and (max-width:420px) {
-    .tk-main .tk-submit .tk-row.actions button.el-button.tk-preview.el-button--default.el-button--small{
+    .tk-main .tk-submit .tk-row.actions button.el-button.tk-preview.el-button--cm-default.el-button--cm-small{
         display: none;
     }
 }
 
 :root {
-  --liushen-radius: 12px;
-  --liushen-card-border-width: 1px;
+  --cm-liushen-radius: 12px;
+  --cm-liushen-card-border-width: 1px;
 }
 
 /* 浅色模式颜色 */
 :root:not(.dark) {
-  --liushen-border-color: var(--btn-regular-bg) ;
-  --card-bg: #fff;
-  --liushen-card-border: var(--btn-regular-bg);
-  --style-border-always: 1px solid var(--liushen-card-border);
+  --cm-liushen-border-color: var(--cm-btn-regular-bg) ;
+  --cm-card-bg: #fff;
+  --cm-liushen-card-border: var(--cm-btn-regular-bg);
+  --cm-style-border-always: 1px solid var(--cm-liushen-card-border);
 }
 
 /* 深色模式颜色 */
 :root.dark {
-  --liushen-border-color: var(--btn-regular-bg);
-  --card-bg: #2c2c2c;
-  --liushen-card-border: var(--btn-regular-bg);
-  --style-border-always: 1px solid var(--liushen-card-border);
+  --cm-liushen-border-color: var(--cm-btn-regular-bg);
+  --cm-card-bg: #2c2c2c;
+  --cm-liushen-card-border: var(--cm-btn-regular-bg);
+  --cm-style-border-always: 1px solid var(--cm-liushen-card-border);
 }
 
 :root.dark #twikoo {
@@ -88,9 +88,9 @@
   margin-top: 0px;
   margin-bottom: 20px;
   /* 圆角 */
-  border-radius: var(--liushen-radius);
+  border-radius: var(--cm-liushen-radius);
   /* 背景颜色 */
-  background: var(--card-bg);
+  background: var(--cm-card-bg);
   /* 变动动画时长 */
   transition: .3s;
 }
@@ -99,14 +99,14 @@
 :root:not(.dark) 
 .twikoo .tk-comments .tk-submit {
   /* 阴影 */
-  box-shadow: var(--card-box-shadow);
+  box-shadow: var(--cm-card-box-shadow);
 }
 
 /* 浅色模式评论区评论大框阴影悬浮加深 */
 :root:not(.dark) 
 .twikoo .tk-comments .tk-submit:hover {
   /* 阴影（浅色模式突出层次感） */
-  box-shadow: var(--card-hover-box-shadow);
+  box-shadow: var(--cm-card-hover-box-shadow);
 }
 
 /* 黑暗模式评论区评论大框 */
@@ -114,17 +114,17 @@
   /* 边框样式 */
   border-style: solid;
   /* 边框宽度 */
-  border-width: var(--liushen-card-border-width);
+  border-width: var(--cm-liushen-card-border-width);
   /* 边框颜色 */
-  border-color: var(--liushen-card-border);
+  border-color: var(--cm-liushen-card-border);
 }
 
 /* 设备信息 */
 .twikoo .tk-extra {
   /* 圆角 */
-  border-radius: var(--liushen-radius);
+  border-radius: var(--cm-liushen-radius);
   /* 背景颜色 */
-  background: var(--card-bg);
+  background: var(--cm-card-bg);
   /* 内边框 */
   padding: 0.4rem;
   /* 底边框 */
@@ -136,39 +136,39 @@
 /* 浅色模式设备信息 */
 :root:not(.dark) .twikoo .tk-extra {
   /* 阴影 */
-  box-shadow: var(--card-box-shadow);
+  box-shadow: var(--cm-card-box-shadow);
 }
 
 /* 浅色模式设备信息阴影悬浮加深 */
 :root:not(.dark) .twikoo .tk-extra:hover {
   /* 阴影 */
-  box-shadow: var(--card-hover-box-shadow);
+  box-shadow: var(--cm-card-hover-box-shadow);
 }
 
 /* 加载更多按钮 */
 .twikoo .tk-expand {
   /* 圆角 */
-  border-radius: var(--liushen-radius);
+  border-radius: var(--cm-liushen-radius);
 }
 
 /* 浅色模式加载更多按钮 */
 :root:not(.dark) .twikoo .tk-expand {
   /* 阴影 */
-  box-shadow: var(--card-box-shadow);
+  box-shadow: var(--cm-card-box-shadow);
 }
 
 /* 浅色模式加载更多按钮（鼠标悬浮时） */
 :root:not(.dark) .twikoo .tk-expand:hover {
   /* 阴影 */
-  box-shadow: var(--card-hover-box-shadow);
+  box-shadow: var(--cm-card-hover-box-shadow);
   /* 背景颜色 */
-  background-color: var(--btn-bg);
+  background-color: var(--cm-btn-bg);
 }
 
 /* 黑暗模式加载更多按钮（鼠标悬浮时） */
 :root.dark .twikoo .tk-expand:hover {
   /* 背景颜色 */
-  background-color: var(--primary);
+  background-color: var(--cm-primary);
 }
 
 /* 黑暗模式加载更多按钮 */
@@ -176,13 +176,13 @@
   /* 边框样式 */
   border-style: solid;
   /* 边框宽度 */
-  border-width: var(--liushen-card-border-width);
+  border-width: var(--cm-liushen-card-border-width);
   /* 边框颜色 */
-  border-color: var(--liushen-card-border);
+  border-color: var(--cm-liushen-card-border);
 }
 
 .tk-action-icon, .tk-icon.__comments {
-    color: var(--primary) !important;
+    color: var(--cm-primary) !important;
 }
 
 /* 分类卡片移动端个人信息卡片只显示两个 */
@@ -237,7 +237,7 @@
     window.TWIKOO_MAGIC_PATH = {path};
 </script>
 
-<!-- 评论数获取 -->
+<!--cm- 评论数获取 --cm->
 <script is:inline>
     let currentPostSlug = window.location.pathname.replace('/posts/', '');
     let currentPostUrl = getPostUrlBySlug(currentPostSlug);
