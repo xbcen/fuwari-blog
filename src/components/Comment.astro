@@ -1,6 +1,35 @@
 <style is:global>
-/* Twikoo评论框高度 */
 
+:root {
+  --cm-liushen-radius: 12px;
+  --cm-liushen-card-border-width: 1px;
+  --cm-liushen-border-color: var(--line-divider);
+  --cm-liushen-card-border: var(--line-divider);
+  --cm-style-border-always: 1px solid var(--cm-liushen-card-border);
+  --cm-text-dark: rgb(255 255 255 / 0.75);
+  --cm-text-light: rgb(0 0 0 / 0.75);
+}
+
+#twikoo {
+  .OwO-logo, .tk-icon svg, .el-loading-spinner {
+    color: var(--primary);
+  }
+
+  .el-button--primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+  }
+
+  .el-button--primary.is-disabled {
+    background-color: oklch(from var(--primary) l c h / 0.5);
+    border-color: oklch(from var(--primary) l c h / 0.5);
+  }
+
+  .twikoo .tk-comments .tk-submit {
+  /* 边框颜色 */
+    border-color: var(--cm-liushen-card-border);
+  }
+}
 /* 下面表情和按钮那一栏的设置 */
 #twikoo .tk-comments .tk-submit .tk-row.actions{
     margin-bottom: 0;
@@ -49,35 +78,16 @@
     }
 }
 
-:root {
-  --cm-liushen-radius: 12px;
-  --cm-liushen-card-border-width: 1px;
-}
-
-/* 浅色模式颜色 */
-:root:not(.dark) {
-  --cm-liushen-border-color: var(--cm-btn-regular-bg) ;
-  --cm-card-bg: #fff;
-  --cm-liushen-card-border: var(--cm-btn-regular-bg);
-  --cm-style-border-always: 1px solid var(--cm-liushen-card-border);
-}
-
-/* 深色模式颜色 */
-:root.dark {
-  --cm-liushen-border-color: var(--cm-btn-regular-bg);
-  --cm-card-bg: #2c2c2c;
-  --cm-liushen-card-border: var(--cm-btn-regular-bg);
-  --cm-style-border-always: 1px solid var(--cm-liushen-card-border);
-}
-
 :root.dark #twikoo {
-  p, span, strong, input, textarea, small, .OwO-logo, .tk-comments-count, .el-input-group__prepend {
-    color: #fff;
+  p, span, strong, input, textarea, small, .tk-comments-count, .el-input-group__prepend {
+    color: var(--cm-text-dark);
   }
 }
 
-.el-input__count.dark {
-  color: #fff !important;
+:root:not(dark) #twikoo {
+  p, span, strong, input, textarea, small, .tk-comments-count, .el-input-group__prepend {
+    color: var(--cm-text-light);
+  }
 }
 
 /* 评论区评论大框 */
@@ -90,7 +100,7 @@
   /* 圆角 */
   border-radius: var(--cm-liushen-radius);
   /* 背景颜色 */
-  background: var(--cm-card-bg);
+  background: var(--card-bg);
   /* 变动动画时长 */
   transition: .3s;
 }
@@ -124,7 +134,7 @@
   /* 圆角 */
   border-radius: var(--cm-liushen-radius);
   /* 背景颜色 */
-  background: var(--cm-card-bg);
+  background: var(--card-bg);
   /* 内边框 */
   padding: 0.4rem;
   /* 底边框 */
@@ -176,7 +186,7 @@
   /* 边框样式 */
   border-style: solid;
   /* 边框宽度 */
-  border-width: var(--cm-liushen-card-border-width);
+  /* border-width: var(--cm-liushen-card-border-width); */
   /* 边框颜色 */
   border-color: var(--cm-liushen-card-border);
 }
@@ -237,7 +247,7 @@
     window.TWIKOO_MAGIC_PATH = {path};
 </script>
 
-<!--cm- 评论数获取 --cm->
+<!-- 评论数获取 -->
 <script is:inline>
     let currentPostSlug = window.location.pathname.replace('/posts/', '');
     let currentPostUrl = getPostUrlBySlug(currentPostSlug);
