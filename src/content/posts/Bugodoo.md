@@ -37,19 +37,19 @@ lang: ''
 
 ![1.2](https://raw.githubusercontent.com/xbcen/pic/main/picture/1.2.png "重复的排行榜")
 
-1.选中文本框。
+1. 选中文本框。
 
 ![1.2.1](https://raw.githubusercontent.com/xbcen/pic/main/picture/1.2.1.png "被选中的文本框")
 
-2.右键-碰撞作用层-勾上J。
+2. 右键-碰撞作用层-勾上J。
 
 ## 烟花喷射战士。
 
 ![1.3](https://raw.githubusercontent.com/xbcen/pic/main/picture/1.3.png "冠军的烟花")
 
-1.选中球。
+1. 选中球。
 
-2.右键-碰撞作用层-取消可与液体作用。
+2. 右键-碰撞作用层-取消可与液体作用。
 
 ## 烟花错位，不显示。
 
