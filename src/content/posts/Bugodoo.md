@@ -7,6 +7,7 @@ tags: ["Algodoo","Bug"]
 category: 'Algodoo'
 draft: false 
 lang: ''
+path: 'bugodoo'
 ---
 
 叠甲：看完本章不能保证你成为Algodoo大牢，但可以帮助你应对Algodoo中的Bug。

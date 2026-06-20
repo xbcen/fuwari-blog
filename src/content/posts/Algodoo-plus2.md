@@ -7,6 +7,7 @@ tags: ["Algodoo","Algodoo plus"]
 category: 'Algodoo'
 draft: false 
 lang: ''
+path: 'algodoo-plus2'
 ---
 
 # 函数的写法

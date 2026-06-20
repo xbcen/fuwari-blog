@@ -7,6 +7,7 @@ tags: ["Algodoo","Algodoo plus","代码"]
 category: 'Algodoo'
 draft: false 
 lang: ''
+path: 'algodoo-plus1'
 ---
 
 这是一个新系列，讲的是如何让你的图更加有趣以及代码的简洁。

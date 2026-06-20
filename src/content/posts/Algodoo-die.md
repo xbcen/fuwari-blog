@@ -7,6 +7,7 @@ tags: ["Algodoo","Bug"]
 category: 'Algodoo'
 draft: false
 lang: ''
+path: 'algodoo-die'
 ---
 
 好的不知道多久了，更新一下。

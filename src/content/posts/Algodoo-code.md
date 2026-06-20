@@ -7,6 +7,7 @@ tags: ["Algodoo","代码"]
 category: 'Algodoo'
 draft: false 
 lang: ''
+path: 'algodoo'
 ---
 
 调整ui不透明度：`gui.skin.opacity = 0.925`
@@ -25,7 +26,7 @@ lang: ''
 
 -3～+3随机取值（标准正态分布）：`rand.normal`
 
-注：取值在-3～+3以外的概率非常小，但不是0%。`
+注：取值在-3～+3以外的概率非常小，但不是0%。
 
 赛博风向（弧度制）：`sim.windangle`
 
@@ -44,7 +45,7 @@ x～y随机取值（y>x）：`rand.uniform01*(y-x)+x`
 上下平移（不容易穿模，写poststep）：`vel = [0, math.sin(sim.time - scene.my.time关卡号) * x]`
 
 注意事项：
-1. x代表物体移动到最左边中心/最下面中心到移动到最右边中心/最上面中心的距离/2
+1. x代表物体移动到最左边中心（最下面中心）到移动到最右边中心（最上面中心）的距离/2
 
 2. 提高/降低移动速度请同时扩大/缩小math.sin()与x的值。
 

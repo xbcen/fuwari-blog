@@ -11,8 +11,8 @@
 }
 
 #twikoo {
-  .OwO-logo, .tk-icon svg, .el-loading-spinner {
-    color: var(--primary);
+  .OwO-logo, .tk-icon svg, .el-loading-spinner svg, .tk-extra-text, .tk-action-link * {
+    color: var(--primary) !important;
   }
 
   .el-button--primary {
@@ -28,6 +28,22 @@
   .twikoo .tk-comments .tk-submit {
   /* 边框颜色 */
     border-color: var(--cm-liushen-card-border);
+  }
+}
+
+:root.dark #twikoo {
+  p, span, strong, input, textarea, small, .tk-comments-count, .el-input-group__prepend, .tk-expand {
+    color: var(--cm-text-dark);
+  }
+}
+
+:root:not(dark) #twikoo {
+  p, span, strong, input, textarea, small, .tk-comments-count, .el-input-group__prepend, .tk-expand {
+    color: var(--cm-text-light);
+  }
+
+  .el-button--primary span {
+    color:rgb(255, 255, 255);
   }
 }
 
@@ -77,22 +93,6 @@
     .tk-main .tk-submit .tk-row.actions button.el-button.tk-preview.el-button--cm-default.el-button--cm-small{
         display: none;
     }
-}
-
-:root.dark #twikoo {
-  p, span, strong, input, textarea, small, .tk-comments-count, .el-input-group__prepend {
-    color: var(--cm-text-dark);
-  }
-}
-
-:root:not(dark) #twikoo {
-  p, span, strong, input, textarea, small, .tk-comments-count, .el-input-group__prepend {
-    color: var(--cm-text-light);
-  }
-
-  .el-button--primary span {
-    color:rgb(255 255 255 / 0.8);
-  }
 }
 
 /* 评论区评论大框 */
@@ -214,7 +214,11 @@
 
 </style>
 
-<div id="tcomment"></div>
+<div id="tcomment" data-path={Astro.props.path}></div>
+
+<script is:inline>
+    window.TWIKOO_MAGIC_PATH = document.getElementById('tcomment').dataset.path;
+</script>
 
 <script>
   document.addEventListener('astro:after-swap', () => {
@@ -248,19 +252,10 @@
     loadTwikoo();``
 </script>
 
-<script is:inline>
-    window.TWIKOO_MAGIC_PATH = {path};
-</script>
-
 <!-- 评论数获取 -->
 <script is:inline>
-    let currentPostSlug = window.location.pathname.replace('/posts/', '');
-    let currentPostUrl = getPostUrlBySlug(currentPostSlug);
-
-    function getPostUrlBySlug(slug) {
-        return `/posts/${slug}`;
-    }
-
+    let currentPostUrl = window.TWIKOO_MAGIC_PATH||window.location.pathname;
+    
     function fetchCommentsCount() {
         if (typeof twikoo === 'undefined') {
             console.warn('Twikoo not loaded yet, retrying...');
@@ -268,26 +263,19 @@
             return;
         }
         
-        console.log('Fetching comments count for URL:', currentPostUrl);
-        
         twikoo.getCommentsCount({
             envId: 'https://pl.xbcen.dpdns.org/',
             urls: [currentPostUrl],
             includeReply: true
         }).then(function (res) {
-            console.log('Comments count response:', res);
             if (res && res.length > 0) {
                 const count = res[0].count;
                 const placeholder = document.getElementById('twikoo-comment-count-placeholder');
                 if (placeholder) {
                     placeholder.textContent = count;
-                    console.log('Comment count set to:', count);
                 }
-            } else {
-                console.warn('No comments found for URL:', currentPostUrl);
             }
         }).catch(function (err) {
-            console.error('Failed to fetch comments count:', err);
             const placeholder = document.getElementById('twikoo-comment-count-placeholder');
             if (placeholder) {
                 placeholder.textContent = '-';
