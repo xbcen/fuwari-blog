@@ -11,8 +11,16 @@
 }
 
 #twikoo {
-  .OwO-logo, .tk-icon svg, .el-loading-spinner svg, .tk-extra-text, .tk-action-link * {
+  .OwO-logo, .tk-icon svg, .tk-action-link * {
     color: var(--primary) !important;
+  }
+
+  .tk-extra-text, .tk-extra .tk-icon svg {
+    color: var(--btn-content) !important;
+  }
+
+  .circular circle {
+    stroke: var(--primary);
   }
 
   .el-button--primary {
@@ -29,6 +37,27 @@
   /* 边框颜色 */
     border-color: var(--cm-liushen-card-border);
   }
+}
+
+/* 展开收起样式 */
+
+.tk-expand {
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        var(--card-bg) 50%,
+        var(--card-bg) 100%
+    );
+    margin-top: -80px; 
+    padding-top: 80px !important; 
+    position: relative;
+    font-size: 0.85em !important;
+}
+
+.tk-expand._collapse {
+    background: none;
+    margin-top: 0;
+    padding-top: 0 !important;
 }
 
 :root.dark #twikoo {
