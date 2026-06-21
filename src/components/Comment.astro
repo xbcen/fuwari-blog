@@ -282,10 +282,9 @@
 </script>
 
 <!-- 评论数获取 -->
-<script is:inline>
-    let currentPostUrl = window.TWIKOO_MAGIC_PATH||window.location.pathname;
-    
+<script is:inline>    
     function fetchCommentsCount() {
+        const currentPostUrl = window.TWIKOO_MAGIC_PATH || window.location.pathname;
         if (typeof twikoo === 'undefined') {
             console.warn('Twikoo not loaded yet, retrying...');
             setTimeout(fetchCommentsCount, 1000);
@@ -325,10 +324,9 @@
     window.addEventListener('load', waitForTwikooAndFetch);
     
     // 页面切换后重新获取评论数
-    document.addEventListener('astro:page-load', function() {
-        currentPostSlug = window.location.pathname.replace('/posts/', '');
-        currentPostUrl = getPostUrlBySlug(currentPostSlug);
-        waitForTwikooAndFetch();
+    document.addEventListener('astro:after-swap', function() {
+        // Twikoo 已经在 astro:after-swap 事件中初始化，直接获取评论数
+        fetchCommentsCount();
     });
 </script>
 
