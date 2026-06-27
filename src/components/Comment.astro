@@ -13,12 +13,15 @@
     /* 图标颜色 */
     .OwO-logo,
     .tk-icon svg,
-    .tk-action-link * {
+    .tk-action-link *,
+    .tk-comments-sort button.__active,
+    .tk-actions button {
       color: var(--primary) !important;
     }
 
     .tk-extra-text,
-    .tk-extra .tk-icon svg {
+    .tk-extra .tk-icon svg,
+    .tk-comments-sort button {
       color: var(--btn-content) !important;
     }
 
@@ -272,6 +275,11 @@
   .tk-row.actions button.el-button {
     border-radius: 12px !important;
   }
+
+  /* 转移 Powered by Twikoo */
+  .tk-footer {
+    display: none;
+  }
 </style>
 
 <div id="tcomment" data-path={Astro.props.path}></div>
@@ -293,7 +301,7 @@
     const commentsContainer = document.getElementById("tcomment");
     if (commentsContainer) {
       const script = document.createElement("script");
-      script.src = "https://cdn.staticfile.org/twikoo/1.6.32/twikoo.all.min.js";
+      script.src = "https://registry.npmmirror.com/twikoo/1.7.13/files/dist/twikoo.min.js";
       script.async = true;
       script.onload = () => {
         const initScript = document.createElement("script");
