@@ -4,6 +4,7 @@ import type { Translation } from "../translation";
 export const vi: Translation = {
 	[Key.home]: "Trang chủ",
 	[Key.about]: "Giới thiệu",
+	[Key.message]: "Bảng tin",
 	[Key.archive]: "Kho bài",
 	[Key.search]: "Tìm kiếm",
 
@@ -35,4 +36,6 @@ export const vi: Translation = {
 	[Key.author]: "Tác giả",
 	[Key.publishedAt]: "Đăng vào lúc",
 	[Key.license]: "Giấy phép bản quyền",
+	[Key.commentCount]: "bình luận",
+	[Key.messageCount]: "tin nhắn",
 };

@@ -4,6 +4,7 @@ import type { Translation } from "../translation";
 export const ko: Translation = {
 	[Key.home]: "홈",
 	[Key.about]: "소개",
+	[Key.message]: "메시지 보드",
 	[Key.archive]: "아카이브",
 	[Key.search]: "검색",
 
@@ -35,4 +36,6 @@ export const ko: Translation = {
 	[Key.author]: "저자",
 	[Key.publishedAt]: "게시일",
 	[Key.license]: "라이선스",
+	[Key.commentCount]: "댓글",
+	[Key.messageCount]: "메시지",
 };

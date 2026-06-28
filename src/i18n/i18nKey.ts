@@ -1,6 +1,7 @@
 enum I18nKey {
 	home = "home",
 	about = "about",
+	message = "message",
 	archive = "archive",
 	search = "search",
 
@@ -32,6 +33,8 @@ enum I18nKey {
 	author = "author",
 	publishedAt = "publishedAt",
 	license = "license",
+	commentCount = "commentCount",
+	messageCount = "messageCount",
 }
 
 export default I18nKey;

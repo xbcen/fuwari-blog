@@ -4,6 +4,7 @@ import type { Translation } from "../translation";
 export const zh_CN: Translation = {
 	[Key.home]: "主页",
 	[Key.about]: "关于",
+	[Key.message]: "留言板",
 	[Key.archive]: "归档",
 	[Key.search]: "搜索",
 
@@ -35,4 +36,6 @@ export const zh_CN: Translation = {
 	[Key.author]: "作者",
 	[Key.publishedAt]: "发布于",
 	[Key.license]: "许可协议",
+	[Key.commentCount]: "条评论",
+	[Key.messageCount]: "条留言",
 };
