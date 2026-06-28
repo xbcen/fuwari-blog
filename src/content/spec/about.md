@@ -1,11 +1,12 @@
 # About
+
 一只X的博客，写点Algodoo教程，以及记录球圈有的没的。
 
-- 球圈一
-- 然后不知道写点什么了，阿巴阿巴。
+- 不知道写点什么了，阿巴阿巴。
 
-## 一些网站
+## 友情链接
 > [主力博客](https://blog.sstars.dpdns.org)
+> [Github](https://github.com/xbcen/fuwari-blog/)
 
 > 牢叉的粉丝交流群：**1017240903**
 

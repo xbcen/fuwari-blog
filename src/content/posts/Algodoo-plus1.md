@@ -1,6 +1,7 @@
 ---
 title: Algodoo plus：物体的移动
 published: 2026-01-21
+updated: 2026-06-19
 description: 'Algodoo中关卡的神奇物体是怎么动的……'
 image: ''
 tags: ["Algodoo","Algodoo plus","代码"]

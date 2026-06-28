@@ -1,6 +1,7 @@
 ---
 title: Algodoo plus：函数
 published: 2026-01-21
+updated: 2026-06-21
 description: '(e)={}'
 image: ''
 tags: ["Algodoo","Algodoo plus"]

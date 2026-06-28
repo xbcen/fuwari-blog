@@ -1,6 +1,7 @@
 ---
 title: Algodoo Bug
 published: 2025-08-11
+updated: 2026-06-19
 description: 'Algodoo华佗？还是Algodoo华雄'
 image: ''
 tags: ["Algodoo","Bug"]
