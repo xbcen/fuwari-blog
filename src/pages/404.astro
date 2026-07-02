@@ -1,0 +1,18 @@
+---
+import MainGridLayout from "../layouts/MainGridLayout.astro";
+import I18nKey from "../i18n/i18nKey";
+import { i18n } from "../i18n/translation";
+---
+
+<MainGridLayout title={i18n(I18nKey.notFound)} description={i18n(I18nKey.notFound)}>
+    <div class="flex flex-col items-center justify-center min-h-[60vh]">
+        <div class="text-8xl font-bold text-[var(--primary)] mb-4">404</div>
+        <h1 class="text-75 text-2xl font-semibold mb-4">{i18n(I18nKey.notFound) + " :("}</h1>
+        <p class="text-75 mb-8 text-center max-w-md">
+            {i18n(I18nKey.notFoundMessage)}
+        </p>
+        <a class="btn-plain scale-animation rounded-lg h-11 font-bold px-5 active:scale-95" href="/" class="btn-primary">
+            {i18n(I18nKey.backToHome)}
+        </a>
+    </div>
+</MainGridLayout>

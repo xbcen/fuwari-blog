@@ -38,4 +38,8 @@ export const tr: Translation = {
 	[Key.license]: "Lisans",
 	[Key.commentCount]: "yorumlar",
 	[Key.messageCount]: "mesajlar",
+
+	[Key.notFound]: "Sayfa Bulunamadı",
+	[Key.notFoundMessage]: "Aradığınız sayfa mevcut değil. Lütfen URL'yi kontrol edin veya ana sayfaya dönün.",
+	[Key.backToHome]: "Ana Sayfaya Dön",
 };

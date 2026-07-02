@@ -9,6 +9,7 @@ category: 'Algodoo'
 draft: false 
 lang: ''
 path: 'algodoo'
+pinned: true
 ---
 
 调整ui不透明度：`gui.skin.opacity = 0.925`

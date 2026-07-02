@@ -38,4 +38,8 @@ export const vi: Translation = {
 	[Key.license]: "Giấy phép bản quyền",
 	[Key.commentCount]: "bình luận",
 	[Key.messageCount]: "tin nhắn",
+
+	[Key.notFound]: "Trang Không Tìm Thấy",
+	[Key.notFoundMessage]: "Trang bạn đang tìm kiếm không tồn tại. Vui lòng kiểm tra URL hoặc quay lại trang chủ.",
+	[Key.backToHome]: "Quay lại Trang Chủ",
 };

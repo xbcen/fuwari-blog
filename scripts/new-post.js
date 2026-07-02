@@ -52,6 +52,7 @@ category: ''
 draft: false 
 lang: ''
 path: ${args[0]}
+pinned: false
 ---
 `
 

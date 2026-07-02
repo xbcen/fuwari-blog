@@ -38,4 +38,8 @@ export const zh_CN: Translation = {
 	[Key.license]: "许可协议",
 	[Key.commentCount]: "条评论",
 	[Key.messageCount]: "条留言",
+
+	[Key.notFound]: "页面未找到",
+	[Key.notFoundMessage]: "您寻找的页面不存在。请检查 URL 或返回首页。",
+	[Key.backToHome]: "返回首页",
 };

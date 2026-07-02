@@ -38,4 +38,8 @@ export const ko: Translation = {
 	[Key.license]: "라이선스",
 	[Key.commentCount]: "댓글",
 	[Key.messageCount]: "메시지",
+
+	[Key.notFound]: "페이지를 찾을 수 없습니다",
+	[Key.notFoundMessage]: "요청하신 페이지가 존재하지 않습니다. URL을 확인하시거나 홈페이지로 돌아가주세요.",
+	[Key.backToHome]: "홈으로 돌아가기",
 };

@@ -38,4 +38,8 @@ export const id: Translation = {
 	[Key.license]: "Lisensi",
 	[Key.commentCount]: "komentar",
 	[Key.messageCount]: "pesan",
+
+	[Key.notFound]: "Halaman Tidak Ditemukan",
+	[Key.notFoundMessage]: "Halaman yang Anda cari tidak ada. Silakan periksa URL atau kembali ke halaman utama.",
+	[Key.backToHome]: "Kembali ke Beranda",
 };

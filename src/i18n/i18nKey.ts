@@ -35,6 +35,10 @@ enum I18nKey {
 	license = "license",
 	commentCount = "commentCount",
 	messageCount = "messageCount",
+
+	notFound = "notFound",
+	notFoundMessage = "notFoundMessage",
+	backToHome = "backToHome",
 }
 
 export default I18nKey;

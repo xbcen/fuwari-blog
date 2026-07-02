@@ -1,7 +1,7 @@
 ---
 title: Algodoo警示录
 published: 2026-01-21
-updated: 2026-6-28
+updated: 2026-06-28
 description: 'Algodoo好像有点似了……'
 image: ''
 tags: ["Algodoo","Bug"]

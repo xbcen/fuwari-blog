@@ -38,4 +38,8 @@ export const zh_TW: Translation = {
 	[Key.license]: "許可協議",
 	[Key.commentCount]: "條評論",
 	[Key.messageCount]: "條留言",
+
+	[Key.notFound]: "頁面未找到",
+	[Key.notFoundMessage]: "您尋找的頁面不存在。請檢查 URL 或返回首頁。",
+	[Key.backToHome]: "返回首頁",
 };

@@ -38,4 +38,9 @@ export const es: Translation = {
 	[Key.license]: "Licencia",
 	[Key.commentCount]: "comentarios",
 	[Key.messageCount]: "mensajes",
+
+	[Key.notFound]: "Página no encontrada",
+	[Key.notFoundMessage]:
+		"La página que buscas no existe. Por favor, verifica la URL o vuelve a la página de inicio.",
+	[Key.backToHome]: "Volver al inicio",
 };
