@@ -38,4 +38,9 @@ export const ja: Translation = {
 	[Key.license]: "ライセンス",
 	[Key.commentCount]: "コメント",
 	[Key.messageCount]: "メッセージ",
+
+	[Key.notFound]: "ページが見つかりません",
+	[Key.notFoundMessage]:
+		"お探しのページは存在しません。URLをご確認いただくか、ホームページに戻ってください。",
+	[Key.backToHome]: "ホームに戻る",
 };

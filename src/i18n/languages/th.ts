@@ -38,4 +38,8 @@ export const th: Translation = {
 	[Key.license]: "สัญญาอนุญาต",
 	[Key.commentCount]: "ความคิดเห็น",
 	[Key.messageCount]: "ข้อความ",
+
+	[Key.notFound]: "หน้าไม่พบ",
+	[Key.notFoundMessage]: "หน้าที่คุณค้นหาไม่มีอยู่ โปรดตรวจสอบ URL หรือกลับไปที่หน้าแรก",
+	[Key.backToHome]: "กลับไปหน้าแรก",
 };
