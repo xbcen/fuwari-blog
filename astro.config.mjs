@@ -29,6 +29,11 @@ export default defineConfig({
 	site: "https://hblog.sstars.dpdns.org",
 	base: "/",
 	trailingSlash: "always",
+	build: {
+		router: {
+			strict: true,
+		},
+	},
 	integrations: [
 		tailwind({
 			nesting: true,
