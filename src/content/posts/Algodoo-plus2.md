@@ -57,8 +57,7 @@ scene.my.f(1,"laocha"); //错误，参数类型不对应
 
 这个时候你就可以这样：
 
-1. 在控制台输入：`scene.my.f=(h,s,v)=>{//代码}`
-
+1. 在控制台输入：`scene.my.f=(h,s,v)=>{//代码}`  
 2. 给物体要用的地方输入：`scene.my.f(colorhsva(0),colorhsva(1),colorhsva(2))`
 
 好的，任务完成了。

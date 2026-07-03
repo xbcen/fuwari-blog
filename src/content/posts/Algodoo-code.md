@@ -47,18 +47,12 @@ x～y随机取值（y>x）：`rand.uniform01*(y-x)+x`
 上下平移（不容易穿模，写poststep）：`vel = [0, math.sin(sim.time - scene.my.time关卡号) * x]`
 
 注意事项：
-1. x代表物体移动到最左边中心（最下面中心）到移动到最右边中心（最上面中心）的距离/2
-
-2. 提高/降低移动速度请同时扩大/缩小math.sin()与x的值。
-
-如：`math.sin((sim.time - scene.my.time关卡号) * 2) * 2x`
-
-3. 需要将物体的密度设置为一个较大数，如：8888888,1919810
-
-4. 代码为自左向右/自下往上，需要向物体放置于最左边。如果需要右自向左/自上往下，请在`math.sin`前面加上`-`（即`- math.sin`），并向物体放置于最右边/最上边。
-
-5. 需要在物件的onspawn中定义：`scene.my.time关卡号 = sim.time`
-
+1. x代表物体移动到最左边中心（最下面中心）到移动到最右边中心（最上面中心）的距离/2  
+2. 提高/降低移动速度请同时扩大/缩小math.sin()与x的值。  
+如：`math.sin((sim.time - scene.my.time关卡号) * 2) * 2x`  
+3. 需要将物体的密度设置为一个较大数，如：8888888,1919810  
+4. 代码为自左向右/自下往上，需要向物体放置于最左边。如果需要右自向左/自上往下，请在`math.sin`前面加上`-`（即`- math.sin`），并向物体放置于最右边/最上边。  
+5. 需要在物件的onspawn中定义：`scene.my.time关卡号 = sim.time`  
 6. 0.16333334来源于`Sim.gravityStrength / Sim.frequency`的计算结果。
 
 摄像机缩放：`scene.camera.zoom`
