@@ -61,10 +61,15 @@ export type NavBarConfig = {
 	links: (NavBarLink | LinkPreset)[];
 };
 
+export type BioConfig = {
+	mode: "text" | "hitokoto";
+	text?: string;
+};
+
 export type ProfileConfig = {
 	avatar?: string;
 	name: string;
-	bio?: string;
+	bio?: string | BioConfig;
 	links: {
 		name: string;
 		url: string;
