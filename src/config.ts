@@ -57,17 +57,20 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
 	avatar: "/assets/images/avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "一只X",
-	bio: "落霞与孤鹜齐飞，秋水共长天一色。",
+	bio: {
+		mode: "hitokoto", // 'hitokoto' or 'text'
+		text: "落霞与孤鹜齐飞，秋水共长天一色。",
+	},
 	links: [
-	    {
-	      	name: 'Bilibili',
-	     	icon: 'fa6-brands:bilibili',
-	      	url: 'https://space.bilibili.com/1528691863',
-},
+		{
+			name: "Bilibili",
+			icon: "fa6-brands:bilibili",
+			url: "https://space.bilibili.com/1528691863",
+		},
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
-			url: "https://github.com/saicaca/fuwari",
+			url: "https://github.com/xbcen",
 		},
 	],
 };
