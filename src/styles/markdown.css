@@ -1,8 +1,4 @@
-.custom-md {
-    *:not(.card-base) {
-        text-autospace: normal;
-    }
-    
+.custom-md {    
     h1 {
         @apply text-3xl;
     }
