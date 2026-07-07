@@ -23,16 +23,16 @@ async function getHitokoto() {
         return await response.text();
     } catch (error) {
         console.warn("Failed to fetch hitokoto:", error);
-        return config.bio;
+        return config.bio.text;
     }
 }
 
 // 获取 bio 文本
 async function getBioText() {
-    if ((config.bio as any)?.mode === "text") {
-        return (config.bio as any).text;
+    if (config.bio.mode === "text") {
+        return config.bio.text;
     }
-    if ((config.bio as any)?.mode === "hitokoto") {
+    if (config.bio.mode === "hitokoto") {
         return await getHitokoto();
     }
 }

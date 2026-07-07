@@ -69,7 +69,10 @@ export type BioConfig = {
 export type ProfileConfig = {
 	avatar?: string;
 	name: string;
-	bio?: string | BioConfig;
+	bio: {
+		mode: "text" | "hitokoto";
+		text?: string;
+	};
 	links: {
 		name: string;
 		url: string;
