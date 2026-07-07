@@ -1,3 +1,9 @@
+---
+// envid配置
+const commentEnvId = "https://pl.xbcen.dpdns.org/";
+const { path } = Astro.props;
+---
+
 <style is:global>
   :root {
     --cm-radius: 12px;
@@ -64,11 +70,11 @@
   /* tag样式 */
   #twikoo {
     .tk-tag-red {
-      color: #f56c6c;
+      color: #f56c6c !important;
     }
 
     .tk-tag-green {
-      color: #67c23a;
+      color: #67c23a !important;
     }
   }
 
@@ -308,96 +314,56 @@
   }
 </style>
 
-<div id="tcomment" data-path={Astro.props.path}></div>
+<div id="tcomment" data-path={path}></div>
 
-<script is:inline>
-  window.TWIKOO_MAGIC_PATH = document.getElementById("tcomment").dataset.path;
-</script>
+<script define:vars={{ commentEnvId }}>
+  // 封装初始化函数
+  function initTwikoo() {
+    const container = document.getElementById("tcomment");
+    if (!container) return;
 
-<script>
-  document.addEventListener("astro:after-swap", () => {
-    loadTwikoo();
-  });
-
-  window.addEventListener("load", () => {
-    loadTwikoo();
-  });
-
-  function loadTwikoo() {
-    const commentsContainer = document.getElementById("tcomment");
-    if (commentsContainer) {
+    // 如果脚本还没加载，则动态加载
+    if (typeof twikoo === 'undefined') {
       const script = document.createElement("script");
       script.src = "https://registry.npmmirror.com/twikoo/1.7.13/files/dist/twikoo.min.js";
       script.async = true;
       script.onload = () => {
-        const initScript = document.createElement("script");
-        initScript.innerHTML = `
-            twikoo.init({
-                envId: 'https://pl.xbcen.dpdns.org/',
-                el: '#tcomment',
-                path: window.TWIKOO_MAGIC_PATH||window.location.pathname,
-            });
-        `;
-        document.body.appendChild(initScript);
+        executeInit(container);
       };
       document.body.appendChild(script);
-    }
-  }
-  loadTwikoo();
-  ``;
-</script>
-
-<!-- 评论数获取 -->
-<script is:inline>
-  function fetchCommentsCount() {
-    const currentPostUrl = window.TWIKOO_MAGIC_PATH || window.location.pathname;
-    if (typeof twikoo === "undefined") {
-      console.warn("Twikoo not loaded yet, retrying...");
-      setTimeout(fetchCommentsCount, 1000);
-      return;
-    }
-
-    twikoo
-      .getCommentsCount({
-        envId: "https://pl.xbcen.dpdns.org/",
-        urls: [currentPostUrl],
-        includeReply: true,
-      })
-      .then(function (res) {
-        if (res && res.length > 0) {
-          const count = res[0].count;
-          const placeholder = document.getElementById(
-            "twikoo-comment-count-placeholder",
-          );
-          if (placeholder) {
-            placeholder.textContent = count;
-          }
-        }
-      })
-      .catch(function (err) {
-        const placeholder = document.getElementById(
-          "twikoo-comment-count-placeholder",
-        );
-        if (placeholder) {
-          placeholder.textContent = "-";
-        }
-      });
-  }
-
-  // 等待 twikoo 初始化完成后再获取评论数
-  function waitForTwikooAndFetch() {
-    if (typeof twikoo === "undefined") {
-      setTimeout(waitForTwikooAndFetch, 100);
     } else {
-      fetchCommentsCount();
+      executeInit(container);
     }
   }
 
-  // 页面加载完成后开始等待 twikoo 初始化
-  window.addEventListener("load", waitForTwikooAndFetch);
+  function executeInit(container) {
+    const path = container.dataset.path || window.location.pathname;
+    twikoo.init({
+      envId: commentEnvId,
+      el: '#tcomment',
+      path: path,
+    });
+    
+    fetchCommentsCount(path);
+  }
 
-  // 页面切换后重新获取评论数
-  document.addEventListener("astro:after-swap", function () {
-    fetchCommentsCount();
-  });
+  // 评论数获取
+  function fetchCommentsCount(path) {
+    if (typeof twikoo === "undefined") return;
+    
+    twikoo.getCommentsCount({
+      envId: commentEnvId,
+      urls: [path],
+      includeReply: true,
+    }).then(res => {
+      const placeholder = document.getElementById("twikoo-comment-count-placeholder");
+      if (placeholder && res.length > 0) {
+        placeholder.textContent = res[0].count;
+      }
+    }).catch(err => console.error("Twikoo Count Error:", err));
+  }
+
+  initTwikoo();
+
+  document.addEventListener("astro:after-swap", initTwikoo);
 </script>
