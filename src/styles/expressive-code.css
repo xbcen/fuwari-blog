@@ -1,3 +1,7 @@
+*:not(.card-base) {
+    text-autospace: normal;
+}
+
 .expressive-code .frame {
   @apply !shadow-none;
 }

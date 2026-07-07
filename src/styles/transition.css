@@ -1,4 +1,8 @@
 /* Page transition animations with Swup */
+*:not(.card-base) {
+    text-autospace: normal;
+}
+
 html.is-changing .transition-swup-fade {
     @apply transition-all duration-200
 }

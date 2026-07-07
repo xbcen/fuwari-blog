@@ -35,6 +35,16 @@
       border-color: var(--primary);
     }
 
+    .el-button:not(.el-button--primary):not(.el-button--text) {
+      background-color: var(--card-bg);
+    }
+
+    .el-button:not(.el-button--primary):not(.el-button--text):hover,
+    .el-button:not(.el-button--primary):not(.el-button--text):active,
+    .el-button:not(.el-button--primary):not(.el-button--text):focus {
+      border-color: var(--primary);
+    }
+
     .el-button--primary.is-disabled {
       background-color: oklch(from var(--primary) l c h / 0.5);
       border-color: oklch(from var(--primary) l c h / 0.5);
@@ -95,6 +105,7 @@
     input,
     textarea,
     small,
+    .tk-preview-container *,
     .tk-comments-count,
     .el-input-group__prepend,
     .tk-expand {
@@ -109,6 +120,7 @@
     input,
     textarea,
     small,
+    .tk-preview-container *,
     .tk-comments-count,
     .el-input-group__prepend,
     .tk-expand {
@@ -159,6 +171,9 @@
     border-radius: 12px;
     min-height: 150px !important;
     height: auto;
+  }
+  .tk-preview-container {
+    margin-top: 1rem;
   }
 
   /* 宽度太窄的时候去掉预览按钮 */

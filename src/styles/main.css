@@ -1,6 +1,10 @@
 @tailwind components;
 
 @layer components {
+    *:not(.card-base) {
+        text-autospace: normal;
+    }
+    
     .card-base {
         @apply rounded-[var(--radius-large)] overflow-hidden bg-[var(--card-bg)] transition;
     }
