@@ -1,0 +1,58 @@
+---
+// 年份进度卡片组件
+---
+<div class="card-base p-3">
+    <div class="progress-wrapper w-full p-0">
+        <div class="progress-info flex justify-between items-center mb-2">
+            <div class="progress-label font-bold bg-[var(--btn-regular-bg)] text-[var(--btn-content)] px-4 py-1 rounded-[30px]">
+                <span id="yearprogress_yearname"></span>
+            </div>
+            <div id="yearprogress_text_container" class="text-base text-[var(--btn-content)] text-right w-full h-[22px] overflow-hidden select-none">
+                <span id="yearprogress_progresstext" class="transition-all duration-300 ease-in-out block"></span>
+                <span id="yearprogress_progresstext_full" class="transition-all duration-300 ease-in-out block"></span>
+            </div>
+        </div>
+        <div class="progress w-full h-2 bg-[var(--btn-regular-bg)] rounded-[4px] overflow-hidden">
+            <div id="yearprogress_progressbar" class="progress-bar h-full bg-[var(--primary)] rounded-[4px] transition-all duration-300 ease-in-out"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+function yearprogress_refresh() {
+    const year = new Date().getFullYear();
+    const yearElement = document.getElementById("yearprogress_yearname");
+    if (yearElement) yearElement.textContent = year.toString();
+    
+    const from = new Date(year, 0, 1).getTime();
+    const to = new Date(year, 11, 31).getTime();
+    const now = new Date().getTime();
+    
+    const progressValue = Number(((now - from) / (to - from + 1)) * 100);
+    const progress = progressValue.toFixed(7);
+    const progressshort = progressValue.toFixed(2);
+    
+    const progressTextElement = document.getElementById("yearprogress_progresstext");
+    if (progressTextElement) progressTextElement.textContent = progressshort + "%";
+    
+    const progressTextFullElement = document.getElementById("yearprogress_progresstext_full");
+    if (progressTextFullElement) progressTextFullElement.textContent = progress + "%";
+    
+    const progressBarElement = document.getElementById("yearprogress_progressbar");
+    if (progressBarElement) progressBarElement.style.width = progress + "%";
+}
+
+yearprogress_refresh();
+
+let yearProgressIntervalHasSet = false;
+if (!yearProgressIntervalHasSet) {
+    yearProgressIntervalHasSet = true;
+    setInterval(yearprogress_refresh, 500);
+}
+</script>
+
+<style>
+#yearprogress_text_container:hover > span {
+    transform: translateY(-1.5em);
+}
+</style>

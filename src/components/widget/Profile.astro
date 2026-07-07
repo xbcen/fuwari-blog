@@ -3,6 +3,7 @@ import { Icon } from "astro-icon/components";
 import { profileConfig } from "../../config";
 import { url } from "../../utils/url-utils";
 import ImageWrapper from "../misc/ImageWrapper.astro";
+import YearProgress from "./YearProgress.astro";
 
 const config = profileConfig;
 
@@ -67,5 +68,6 @@ const bioText = await getBioText();
             </a>}
         </div>
     </div>
+    <YearProgress />
 </div>
 
