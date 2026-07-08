@@ -84,6 +84,10 @@ export type LicenseConfig = {
 	enable: boolean;
 	name: string;
 	url: string;
+	remark: {
+		enable: boolean;
+		text?: string;
+	};
 };
 
 export type LIGHT_DARK_MODE =

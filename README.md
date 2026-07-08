@@ -9,12 +9,12 @@
 - [x] 基于 [Astro](https://astro.build/) 和 [Tailwind CSS](https://tailwindcss.com/) 开发
 - [x] 流畅的动画和页面过渡
 - [x] 亮色 / 暗色模式
-- [x] 自定义主题色和横幅图片
+- [x] 更精细的主题颜色
 - [x] 响应式设计
 - [x] 搜索
 - [x] 文内目录
-- [x] 评论（基于[Twikoo](https://twikoo.js.org/)）
-- [x] 更精细的主题颜色
+- [x] 评论与留言板（基于[Twikoo](https://twikoo.js.org/)）
+- [x] [一言](https://hitokoto.cn/)
 
 ## 👀 要求
 
@@ -23,10 +23,10 @@
 
 ## 🚀 使用方法
 
-1. 使用此模板[生成新仓库](https://github.com/xbcen/fuwari-blog/generate)或 Fork 此仓库
+1. 使用此模板[生成新仓库](https://github.com/xbcen/fuwari-blog/generate)或 [Fork 此仓库](https://github.com/xbcen/fuwari-blog/fork)
 2. 进行本地开发，Clone 新的仓库，执行 `pnpm install` 和 `pnpm add sharp` 以安装依赖  
    - 若未安装 [pnpm](https://pnpm.io)，执行 `npm install -g pnpm`
-3. 通过配置文件 `src/config.ts`和`astro.config.mjs` 自定义博客，根据[Twikoo](https://twikoo.js.org/)配置部署评论系统
+3. 通过配置文件 `src/config.ts` 和 `astro.config.mjs` 自定义博客，根据[Twikoo](https://twikoo.js.org/)配置部署评论系统,修改 `src/components/Comment.astro` 中的 `commentEnvId`
 4. 执行 `pnpm new-post <filename>` 创建新文章，并在 `src/content/posts/` 目录中编辑
 5. 参考[官方指南](https://docs.astro.build/zh-cn/guides/deploy/)将博客部署至 Vercel, Netlify, GitHub Pages 等；部署前需编辑 `astro.config.mjs` 中的站点设置。
 
@@ -41,7 +41,7 @@ image: ./cover.jpg
 tags: [Foo, Bar]
 category: Front-end
 draft: false
-lang: zh_CN      # 仅当文章语言与 `config.ts` 中的网站语言不同时需要设置
+lang: zh_TW      # 仅当文章语言与 `config.ts` 中的网站语言不同时需要设置
 path: first-blog       # 仅当需要与其他评论区联动时需要设置，参阅：https://www.imaegoo.com/2021/twikoo-path/
 pinned: false
 ---

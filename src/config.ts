@@ -79,6 +79,10 @@ export const licenseConfig: LicenseConfig = {
 	enable: true,
 	name: "CC BY-NC-SA 4.0",
 	url: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+	remark: {
+		enable: true,
+		text: "神的钴（蓝）（青金）石，持续更新中……　:|",
+	},
 };
 
 export const expressiveCodeConfig: ExpressiveCodeConfig = {

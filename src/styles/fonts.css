@@ -1,0 +1,48 @@
+/* src/styles/fonts.css */
+
+@font-face {
+  font-family: "LXGW Wenkai GB";
+  src: url("/fonts/LXGWWenkaiGB.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "LXGW Wenkai Mono GB";
+  src: url("/fonts/LXGWWenkaiMonoGB.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 定义 CSS 变量 */
+:root {
+  --font-family-base: "LXGW Wenkai GB", system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+  --font-family-mono: "LXGW Wenkai Mono GB", "Consolas", monospace;
+}
+
+/* 全局字体设置 */
+html {
+  font-family: var(--font-family-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family-base);
+}
+
+/* 代码字体设置（可选） */
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--font-family-mono);
+}
+
+/* 确保 Tailwind 的 font-sans 类使用 MiSans（可选） */
+.font-sans {
+  font-family: var(--font-family-base) !important;
+}

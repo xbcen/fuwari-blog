@@ -25,7 +25,7 @@ pinned: true
 
 ## UI没了。
 
-![1.1](https://raw.githubusercontent.com/xbcen/pic/main/picture/1.1.png "UI没了")
+![1.1](https://gh-proxy.org/https://raw.githubusercontent.com/xbcen/pic/main/picture/1.1.png "UI没了")
 
 解决方法：按tab键。
 
@@ -40,24 +40,24 @@ pinned: true
 
 ## 排名重复。
 
-![1.2](https://raw.githubusercontent.com/xbcen/pic/main/picture/1.2.png "重复的排行榜")
+![1.2](https://gh-proxy.org/https://raw.githubusercontent.com/xbcen/pic/main/picture/1.2.png "重复的排行榜")
 
 1. 选中文本框。
 
-![1.2.1](https://raw.githubusercontent.com/xbcen/pic/main/picture/1.2.1.png "被选中的文本框")
+![1.2.1](https://gh-proxy.org/https://raw.githubusercontent.com/xbcen/pic/main/picture/1.2.1.png "被选中的文本框")
 
 2. 右键-碰撞作用层-勾上J。
 
 ## 烟花喷射战士。
 
-![1.3](https://raw.githubusercontent.com/xbcen/pic/main/picture/1.3.png "冠军的烟花")
+![1.3](https://gh-proxy.org/https://raw.githubusercontent.com/xbcen/pic/main/picture/1.3.png "冠军的烟花")
 
 1. 选中球。  
 2. 右键-碰撞作用层-取消可与液体作用。
 
 ## 烟花错位（不显示）。
 
-![1.1](https://raw.githubusercontent.com/xbcen/pic/main/picture/1.1.png "UI没了")
+![1.1](https://gh-proxy.org/https://raw.githubusercontent.com/xbcen/pic/main/picture/1.1.png "UI没了")
 
 1. 选中球，右键，选取，选取，选取圆形物件。  
 2. 脚本选单，在poststep中将`vecs:=[[56,-201],[56,-201]]`;中的`[56,-201]`更改为球现在所在的位置。
@@ -74,9 +74,9 @@ pinned: true
 
 方法2：在上面输入框输入：`xxx=xxx`
 
-![输入框](https://raw.githubusercontent.com/xbcen/pic/main/picture/输入框.png "Algodoo输入框")
+![输入框](https://gh-proxy.org/https://raw.githubusercontent.com/xbcen/pic/main/picture/输入框.png "Algodoo输入框")
 
-如：ondie=(e)=>{}
+如：`ondie=(e)=>{}`
 
 # 急诊（急性bug，请做好图没了的准备）
 
@@ -114,14 +114,14 @@ timetolive = 0
 
 ## 球全叠50名。
 
-![2.3](https://raw.githubusercontent.com/xbcen/pic/main/picture/2.3.png "叠球的排行榜")
+![2.3](https://gh-proxy.org/https://raw.githubusercontent.com/xbcen/pic/main/picture/2.3.png "叠球的排行榜")
 
 1. <kbd>Ctrl</kbd>+<kbd>Z</kbd>/调整排行榜。  
 2. 选中所有球，右键，选取，选取，选取圆形物件。  
 3. 脚本选单，在ondie中输入：`(e)=>{scene.my.num = scene.my.num - 1}`
 
 ## 球排名中间空一位。
-![2.4](https://raw.githubusercontent.com/xbcen/pic/main/picture/2.4.png "排名之间空一位的排行榜")
+![2.4](https://gh-proxy.org/https://raw.githubusercontent.com/xbcen/pic/main/picture/2.4.png "排名之间空一位的排行榜")
 
 1. <kbd>Ctrl</kbd>+<kbd>Z</kbd>/调整排行榜。  
 2. 选中所有球，右键，选取，选取，选取追踪绘图器。  
