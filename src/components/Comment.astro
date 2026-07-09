@@ -80,16 +80,19 @@ const { path } = Astro.props;
 
   /* 展开收起样式 */
   .tk-expand {
+    margin-top: -80px;
+    padding-top: 80px !important;
+    position: relative;
+    font-size: 0.85em !important;
+  }
+
+  body:not(.bg-loaded) .tk-expand {
     background: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0) 0%,
       var(--card-bg) 50%,
       var(--card-bg) 100%
     );
-    margin-top: -80px;
-    padding-top: 80px !important;
-    position: relative;
-    font-size: 0.85em !important;
   }
 
   .tk-expand._collapse {
@@ -201,8 +204,6 @@ const { path } = Astro.props;
     margin-bottom: 20px;
     /* 圆角 */
     border-radius: var(--cm-radius);
-    /* 背景颜色 */
-    background: var(--card-bg);
     /* 变动动画时长 */
     transition: 0.3s;
   }
@@ -233,8 +234,6 @@ const { path } = Astro.props;
   .twikoo .tk-extra {
     /* 圆角 */
     border-radius: var(--cm-radius);
-    /* 背景颜色 */
-    background: var(--card-bg);
     /* 内边框 */
     padding: 0.4rem;
     /* 底边框 */

@@ -1,42 +1,51 @@
 import type { AUTO_MODE, DARK_MODE, LIGHT_MODE } from "@constants/constants";
 
 export type SiteConfig = {
-	title: string;
-	subtitle: string;
+		title: string;
+		subtitle: string;
 
-	lang:
-		| "en"
-		| "zh_CN"
-		| "zh_TW"
-		| "ja"
-		| "ko"
-		| "es"
-		| "th"
-		| "vi"
-		| "tr"
-		| "id";
+		lang:
+			| "en"
+			| "zh_CN"
+			| "zh_TW"
+			| "ja"
+			| "ko"
+			| "es"
+			| "th"
+			| "vi"
+			| "tr"
+			| "id";
 
-	themeColor: {
-		hue: number;
-		fixed: boolean;
-	};
-	banner: {
-		enable: boolean;
-		src: string;
-		position?: "top" | "center" | "bottom";
-		credit: {
-			enable: boolean;
-			text: string;
-			url?: string;
+		themeColor: {
+			hue: number;
+			fixed: boolean;
 		};
-	};
-	toc: {
-		enable: boolean;
-		depth: 1 | 2 | 3;
-	};
+		banner: {
+			enable: boolean;
+			src: string;
+			position?: "top" | "center" | "bottom";
+			credit: {
+				enable: boolean;
+				text: string;
+				url?: string;
+			};
+		};
+		background: {
+			enable: boolean;
+			src: string;
+			position?: "top" | "center" | "bottom";
+			size?: "cover" | "contain" | "auto";
+			repeat?: "no-repeat" | "repeat" | "repeat-x" | "repeat-y";
+			attachment?: "fixed" | "scroll" | "local";
+			opacity?: number;
+		};
+		toc: {
+			enable: boolean;
+			depth: 1 | 2 | 3;
+		};
 
-	favicon: Favicon[];
-};
+		favicon: Favicon[];
+	};
 
 export type Favicon = {
 	src: string;

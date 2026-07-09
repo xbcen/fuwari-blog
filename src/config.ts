@@ -25,6 +25,15 @@ export const siteConfig: SiteConfig = {
 			url: "", // (Optional) URL link to the original artwork or artist's page
 		},
 	},
+	background: {
+		enable: true, // Enable background image
+		src: "/assets/images/bg-light.jpg", // Background image URL (supports HTTPS)
+		position: "center", // Background position: 'top', 'center', 'bottom'
+		size: "cover", // Background size: 'cover', 'contain', 'auto'
+		repeat: "no-repeat", // Background repeat: 'no-repeat', 'repeat', 'repeat-x', 'repeat-y'
+		attachment: "fixed", // Background attachment: 'fixed', 'scroll', 'local'
+		opacity: 0.5, // Background opacity (0-1)
+	},
 	toc: {
 		enable: true, // Display the table of contents on the right side of the post
 		depth: 2, // Maximum heading depth to show in the table, from 1 to 3
@@ -32,15 +41,15 @@ export const siteConfig: SiteConfig = {
 	favicon: [
 		// Leave this array empty to use the default favicon
 		{
-		  src: '/assets/favicon/de.png',    // Path of the favicon, relative to the /public directory
-		  theme: 'dark',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
+			src: "/assets/favicon/de.png", // Path of the favicon, relative to the /public directory
+			theme: "dark", // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
 		},
-		
+
 		// Leave this array empty to use the default favicon
 		{
-		  src: '/assets/favicon/pl.png',    // Path of the favicon, relative to the /public directory
-		  theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
-		}
+			src: "/assets/favicon/pl.png", // Path of the favicon, relative to the /public directory
+			theme: "light", // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
+		},
 	],
 };
 
