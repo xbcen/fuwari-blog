@@ -324,7 +324,7 @@ const { path } = Astro.props;
     // 如果脚本还没加载，则动态加载
     if (typeof twikoo === 'undefined') {
       const script = document.createElement("script");
-      script.src = "https://registry.npmmirror.com/twikoo/1.7.13/files/dist/twikoo.min.js";
+      script.src = "https://registry.npmmirror.com/twikoo/1.7.14/files/dist/twikoo.min.js";
       script.async = true;
       script.onload = () => {
         executeInit(container);
