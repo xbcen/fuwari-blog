@@ -12,14 +12,12 @@ path: 'bugodoo'
 pinned: true
 ---
 
-:::warning
-看完本章不能保证你成为Algodoo大牢（？），但可以帮助你应对Algodoo中的Bug。  
-无把握请勿修改代码，若因此造成bug建议重开Algodoo。
-:::
+> [!WARNING]
+> 看完本章不能保证你成为Algodoo大牢（？），但可以帮助你应对Algodoo中的Bug。  
+> 无把握请勿修改代码，若因此造成bug建议重开Algodoo。
 
-:::tip
-如果无特殊情况（例如系统版本不支持），建议更新Algodoo版本至2.2.0或以上。
-:::
+> [!TIP]
+> 如果无特殊情况（例如系统版本不支持），建议更新Algodoo版本至2.2.0或以上。
 
 # 门诊（不急的bug）
 
