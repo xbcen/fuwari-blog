@@ -13,7 +13,7 @@
 - [x] 响应式设计
 - [x] 搜索
 - [x] 文内目录
-- [x] 评论与留言板（基于[Twikoo](https://twikoo.js.org/)）
+- [x] 评论与留言板（基于 [Twikoo](https://twikoo.js.org/)）
 - [x] [一言](https://hitokoto.cn/)
 
 ## 👀 要求
@@ -23,7 +23,7 @@
 
 ## 🚀 使用方法
 
-1. 使用此模板[生成新仓库](https://github.com/xbcen/fuwari-blog/generate)或 [Fork 此仓库](https://github.com/xbcen/fuwari-blog/fork)
+1. 使用此模板[生成新仓库](https://github.com/xbcen/fuwari-blog/generate) 或 [Fork 此仓库](https://github.com/xbcen/fuwari-blog/fork)
 2. 进行本地开发，Clone 新的仓库，执行 `pnpm install` 和 `pnpm add sharp` 以安装依赖  
    - 若未安装 [pnpm](https://pnpm.io)，执行 `npm install -g pnpm`
 3. 通过配置文件 `src/config.ts` 自定义博客，根据[Twikoo](https://twikoo.js.org/)配置部署评论系统，修改 `src/components/Comment.astro` 中的 `commentEnvId`
