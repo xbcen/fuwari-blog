@@ -1,11 +1,11 @@
 ---
-title: Algodoo plus：函数
+title: Algodoo Plus：函数
 published: 2026-01-21
 updated: 2026-06-21
 description: '(e)={}'
 image: ''
-tags: ["Algodoo","Algodoo plus"]
-category: 'Algodoo'
+tags: ["Algodoo"]
+category: 'Algodoo Plus'
 draft: false
 lang: ''
 path: 'algodoo-plus2'

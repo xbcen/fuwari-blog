@@ -1,7 +1,7 @@
 ---
 title: Algodoo代码
 published: 2025-08-11
-updated: 2026-06-19
+updated: 2026-07-21
 description: 'Algodoo代码合集，收集中……'
 image: ''
 tags: ["Algodoo","代码"]
@@ -16,11 +16,11 @@ pinned: true
 
 更改背景（天空颜色）：`app.background.skycolor=颜色（rgba）`
 
-生成圆形：`Scene.addCircle()`
+生成圆形：`Scene.addCircle({})`
 
-生成方形：`Scene.addBox()`
+生成方形：`Scene.addBox({})`
 
-生成追踪器（追尾）：`scene.addPen()`
+生成追踪器（追尾）：`scene.addPen({})`
 
 生成物件时生成变量需要这么写：`x := a`
 
@@ -187,8 +187,6 @@ poststep=(e)=>{}
 ```
 
 回家区免疫下层（写oncollide）：
-
-
 ```
 (e)=>{
 e.pos(1) >= e.this.pos(1) ? {
@@ -207,3 +205,19 @@ vel = vel + [ - math.sin(sim.gravityAngleOffset), math.cos(sim.gravityAngleOffse
 } : {}
 }
 ```
+
+修改数组的某一项（定义变量）：
+```
+scene.my.changearray = (array, count, value)=>{
+    arrayre = [];
+    for(string.length(array), (i)=>{
+        count == i ? {
+            arrayre = arrayre ++ [value]
+        } : {
+            arrayre = arrayre ++ [array(i)]
+        }
+    });
+    arrayre
+};
+```
+调用方式：`scene.my.changearray(需要更改的数组, 更改元素的下标, 更改后该元素的值)`

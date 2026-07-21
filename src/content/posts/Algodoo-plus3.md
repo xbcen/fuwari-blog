@@ -1,11 +1,11 @@
 ---
-title: Algodoo plus：数组
+title: Algodoo Plus：数组
 published: 2026-06-27
 updated: 2026-07-21
 description: '登 神 长 阶'
 image: './assets/cover/Algodoo-plus3.png'
-tags: ["Algodoo","Algodoo plus"]
-category: 'Algodoo'
+tags: ["Algodoo","数据类型"]
+category: 'Algodoo Plus'
 draft: false 
 lang: ''
 path: 'algodoo-plus3'

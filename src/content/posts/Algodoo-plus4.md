@@ -1,11 +1,11 @@
 ---
-title:  Algodoo plus：数据类型
+title:  Algodoo Plus：数据类型
 published: 2026-07-20
 updated: 2026-07-20
 description: '最没底的一集。'
 image: './assets/cover/Algodoo-plus4.png'
-tags: ["Algodoo","Algodoo plus"]
-category: 'Algodoo'
+tags: ["Algodoo","数据类型"]
+category: 'Algodoo Plus'
 draft: false 
 lang: ''
 path: 'algodoo-plus4'
