@@ -1,7 +1,7 @@
 ---
 title:  Algodoo Plus：数据类型
 published: 2026-07-20
-updated: 2026-07-20
+updated: 2026-07-21
 description: '最没底的一集。'
 image: './assets/cover/Algodoo-plus4.png'
 tags: ["Algodoo","数据类型"]
