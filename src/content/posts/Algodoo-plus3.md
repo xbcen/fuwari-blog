@@ -1,14 +1,14 @@
 ---
 title: Algodoo plus：数组
 published: 2026-06-27
-updated: 2026-07-06
+updated: 2026-07-21
 description: '登 神 长 阶'
 image: './assets/cover/Algodoo-plus3.png'
 tags: ["Algodoo","Algodoo plus"]
 category: 'Algodoo'
 draft: false 
 lang: ''
-path: algodoo-plus3
+path: 'algodoo-plus3'
 ---
 
 # 数组的概念
@@ -18,18 +18,79 @@ path: algodoo-plus3
 **元素**为数组的基本组成部分。  
 **下标/索引**是用于标识数组中元素位置的数字。一般地，数组下标从0开始。
 
-设数组`a`为`[1,2,3]`。  
+设数组`a`为`[1, 2, 3]`。  
 其中`1`、`2`、`3`就是数组`a`中的**元素**。  
 `1`为数组`a`的第0项。
 
 # Algodoo中的数组
 
+## 数组的读取
+
 Algodoo中，同一数组的元素可以为不同的数据类型。
 
 读取数组的下标采用`数组(下标)`。
 
-例如：`a=[111,"laocha"]`。  
+例如：`a = [111,"laocha"]`。  
 则`a(0)`返回`111`。
+
+## 数组的修改
+
+数组的元素不可以直接单独被修改。
+
+例如：`a = [111, "laocha"]`。  
+不能直接`a(0) = 222`.
+
+```js title="正确格式"
+a = [222, a(0)]
+```
+
+> 神人Thyme，这功能也不给。
+> 
+> 只能自己动手，丰衣足食了。
+
+```js title="修改数组某一项的函数"
+scene.my.changearray = (array, count, value)=>{
+    arrayre = [];
+    for(string.length(array), (i)=>{
+        count == i ? {
+            arrayre = arrayre ++ [value]
+        } : {
+            arrayre = arrayre ++ [array(i)]
+        }
+    });
+    arrayre
+};
+```
+
+其中  
+- `array`：需要更改的数组  
+- `count`：更改元素的下标  
+- `value`：更改后该元素的值
+
+最终该函数返回更改后的数组。
+
+---
+
+若需加减乘除数组的元素，需要一一对应。
+
+例如：`a = [111, "laocha"]`。  
+若需修改`111`为`222`，则应这么写：
+
+```js title="正确格式"
+a = a + [111, ""]
+```
+
+---
+
+可以通过`++`向数组添加元素。
+
+
+```bash showLineNumbers=false title="举例"
+> a = ["array", "1"]
+["array", "1"]
+> a = a ++ [4]
+[array, 1, 4]
+```
 
 # 数组的用法（实战环节）
 
@@ -90,7 +151,7 @@ Algodoo中，同一数组的元素可以为不同的数据类型。
 
 设变量
 
-```
+```js
 _color = [[1, 0, 0, 1], [1, 0.5, 0, 1], [1, 1, 0, 1], [0, 0.5, 0, 1], [0, 1, 1, 1], [0, 0, 1, 1], [0.5, 0, 1, 1], [1, 0.5, 1, 1], [1, 1, 1, 1]]
 ```
 
@@ -101,7 +162,7 @@ _color = [[1, 0, 0, 1], [1, 0.5, 0, 1], [1, 1, 0, 1], [0, 0.5, 0, 1], [0, 1, 1, 
 
 故有以下代码： 
 
-```
+```js
 textcolor = _color(e.other._team - 1);
 ```
 
