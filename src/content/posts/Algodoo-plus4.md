@@ -155,7 +155,7 @@ e.other._shoucang ? {
 `math.toint(false) == 0`  
 对应第1步中数组的两个下标。
 
-4. 所以有
+4. 所以有：
 
 ```js
 _aa = ["未投币；", "已投币；"](math.toint(e.other._toubi));
